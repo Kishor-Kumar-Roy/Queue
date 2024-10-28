@@ -1,0 +1,79 @@
+#include<iostream>
+#include<stack>
+using namespace std;
+
+class queue
+{
+   stack<int>st1;
+   stack<int>st2;
+   
+   bool empty()
+   {
+    return st1.empty() && st2.empty();
+   }
+
+void push(int x)
+{
+    if(empty())
+    {
+        cout<<"pushed "<<x<<" into queue";
+        st1.push(x);
+    }
+}
+
+int pop()
+{
+    if(empty())
+    return 0;
+else if(!st2.empty())
+{
+    int element=st2.top();
+    cout<<"popped "<<x<<" from queue";
+    st2.pop();
+    return element;
+}
+else
+{
+   while(!st1.empty())
+   {
+    st2.push(st1.top());
+    st1.pop();
+   }
+   int element=st2.top();
+   cout<<"popped "<<x<<" from queue";
+    st2.pop();
+    return element;
+}
+}
+int start()
+{
+    if(empty)
+    cout<<"stack is empty";
+else if(!st2.empty())
+{
+    cout<<"start element= "<<st.top();
+    return st2.top();
+}
+else 
+{
+    while(!st1.empty())
+    {
+        st2.push(st1.top());
+        st1.pop();
+    }
+    cout<<"start element= "<<st.top();
+    return st2.top();
+}
+}
+};
+
+int main()
+{
+    Queue q;
+    q.push(5);
+    q.push(15);
+    q.push(52);
+    q.push(55);
+  q.pop();
+    return 0;
+}
